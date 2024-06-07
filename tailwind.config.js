@@ -4,12 +4,20 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      display: ["Open Sans", "sans-serif"],
-      body: ["Open Sans", "sans-serif"],
+      display: ["Kumbh Sans", "sans-serif"],
+      body: ["Kumbh Sans", "sans-serif"],
     },
     extend: {
       fontSize: {
         14: "14px",
+      },
+      colors: {
+        orange: "hsl(26, 100%, 55%)",
+        "orange-pale": "hsl(25, 100%, 94%)",
+        "dark-blue": "hsl(220, 13%, 13%)",
+        "dark-grayish-blue": "hsl(219, 9%, 45%)",
+        "grayish-blue": "hsl(220, 14%, 75%)",
+        "light-grayish-blue": "hsl(223, 64%, 98%)",
       },
       backgroundColor: {
         "main-bg": "#FAFBFB",
