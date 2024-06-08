@@ -9,6 +9,11 @@ const ProductDetail = () => {
       <Header />
       <main className="flex">
         <section className="w-1/2">
+          <figure>
+            <img src={productImg} alt="" />
+          </figure>
+        </section>
+        <section className="w-1/2">
           <h1>Produc Detail</h1>
         </section>
       </main>

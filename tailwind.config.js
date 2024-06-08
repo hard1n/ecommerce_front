@@ -32,6 +32,11 @@ module.exports = {
       borderColor: {
         color: "rgba(0, 0, 0, 0.1)",
       },
+      boxShadow: {
+        "3xl": " 35px 60px -15px rgba(0, 0, 0, 0.3)",
+      }, screens: {
+      'xsm': '470px',
+      },
       width: {
         400: "400px",
         760: "760px",

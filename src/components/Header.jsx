@@ -7,7 +7,7 @@ import avatar from "../data/image-avatar.png";
 
 const Header = () => {
   return (
-    <div className="px-14">
+    <div className=" px-6 md:px-14">
       <div className="flex justify-between items-center h-20 border-b-1 border-grayish-blue">
         <Navbar />
         {/* <span className="absolute inline-flex rounded-full" /> */}
