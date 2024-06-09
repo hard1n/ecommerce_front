@@ -7,7 +7,7 @@ const ProductDetail = () => {
   return (
     <>
       <Header />
-      <main className="flex">
+      <main className="">
         <section className="w-1/2">
           <figure>
             <img src={productImg} alt="" />

@@ -56,19 +56,27 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Nav */}
-        <div className= {`${activeNav ? "block" : "hidden"} md:hidden absolute inset-0 bg-black/50 z-10`}>
-        </div>
-          <div className={`${activeNav ? "left-0" : "-left-2/3"} md:hidden absolute w-2/3 inset-y-0  transition-all flex flex-col xsm:w-1/2 sm:w-1/3 bg-main-bg shadow-2xl z-10`}>
-            <div className="h-20 pl-6 mr-3 flex">
-              <button onClick={toggleNavbar} className="text-dark-grayish-blue">
-                {" "}
-                <IoClose size={20} />
-              </button>
-            </div>
-            <div className="m-4">
-              <NavLinks />
-            </div>
+        <div
+          onClick={toggleNavbar}
+          className={`${
+            activeNav ? "block" : "hidden"
+          } md:hidden absolute inset-0 bg-black/50 z-10`}
+        ></div>
+        <div
+          className={`${
+            activeNav ? "left-0" : "-left-2/3"
+          } md:hidden absolute w-2/3 inset-y-0  transition-all flex flex-col xsm:w-1/2 sm:w-1/3 bg-main-bg shadow-2xl z-10`}
+        >
+          <div className="h-20 pl-6 mr-3 flex">
+            <button onClick={toggleNavbar} className="text-dark-grayish-blue">
+              {" "}
+              <IoClose size={20} />
+            </button>
           </div>
+          <div className="m-4">
+            <NavLinks />
+          </div>
+        </div>
       </nav>
     </>
   );
