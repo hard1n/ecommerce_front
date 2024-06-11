@@ -6,6 +6,7 @@
     "brand": "Sneaker Company",
     "price": "250",
     "discount": "50",
+    "stock": 8,
     "imgs": [
       "/images/image-product-1.jpg",
       "/images/image-product-2.jpg",

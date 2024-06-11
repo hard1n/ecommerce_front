@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Carousel from "../components/Carousel";
 import { FaPlus, FaMinus } from "react-icons/fa";
@@ -12,7 +12,8 @@ import productData from "../data/products.json";
 const images = import.meta.glob("/src/data/*");
 
 const ProductDetail = () => {
-  console.log(products[0].imgs);
+  const [productCount, setProductCount] = useState(1);
+
   return (
     <>
       <Header />
@@ -51,13 +52,32 @@ const ProductDetail = () => {
                 </p>
                 <p className="line-through font-bold text-dark-grayish-blue">{`$ ${product.price}.00`}</p>
               </div>
+
+              {/*** Product amount & add to cart ***/}
               <section className="sm:flex justify-between">
                 <div className="flex justify-between w-full sm:w-1/3 rounded-lg bg-light-gray relative">
-                  <button className=" px-4 text-orange">
+                  <button
+                    onClick={() =>
+                      setProductCount(productCount === 1 ? 1 : productCount - 1)
+                    }
+                    className=" px-4 text-orange"
+                  >
                     <FaMinus />
                   </button>
-                  <span className="text-base font-bold py-4">0</span>
-                  <button className=" px-4 text-orange">
+                  {/* <input type="number" name="" id="" value={productCount} /> */}
+                  <span className="text-base font-bold py-4">
+                    {productCount}
+                  </span>
+                  <button
+                    onClick={() =>
+                      setProductCount(
+                        productCount < product.stock
+                          ? productCount + 1
+                          : productCount
+                      )
+                    }
+                    className=" px-4 text-orange"
+                  >
                     <FaPlus />
                   </button>
                 </div>
