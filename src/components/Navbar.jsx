@@ -55,7 +55,7 @@ const Navbar = () => {
           <NavLinks />
         </div>
 
-        {/* Mobile Nav */}
+        {/*** Mobile Nav ***/}
         <div
           onClick={toggleNavbar}
           className={`${
