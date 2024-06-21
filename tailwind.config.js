@@ -34,8 +34,16 @@ module.exports = {
       },
       boxShadow: {
         "3xl": " 35px 60px -15px rgba(0, 0, 0, 0.3)",
-      }, screens: {
-      'xsm': '470px',
+      },
+      screens: {
+        xsm: "470px",
+      },
+      dropShadow: {
+        custom: "0 4px 3px rgba(0, 0, 0, 0.75)",
+        "4xl": [
+          "0 35px 35px rgba(0, 0, 0, 0.75)",
+          "0 45px 65px rgba(0, 0, 0, 0.50)",
+        ],
       },
       width: {
         400: "400px",

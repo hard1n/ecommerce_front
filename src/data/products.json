@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "title": "Fall Limited Edition Sneakers",
-    "details": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber sole, they'll withstand everything the weather can offer",
+    "title": "Fall Normal Edition Sneakers",
+    "details": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber sole, they'll withstand everything the weather can offer",
     "brand": "Sneaker Company",
-    "price": "250",
-    "discount": "50",
+    "price": 200,
+    "discount": 50,
     "stock": 8,
     "imgs": [
       "/images/image-product-1.jpg",
@@ -13,5 +13,200 @@
       "/images/image-product-3.jpg",
       "/images/image-product-4.jpg"
     ]
+  },
+  {
+    "id": 2,
+    "title": "Fall Limited Edition Sneakers",
+    "details": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber sole, they'll withstand everything the weather can offer",
+    "brand": "Sneaker Company",
+    "price": 250,
+    "discount": 0,
+    "stock": 8,
+    "imgs": [
+      "/images/image-product-1.jpg",
+      "/images/image-product-2.jpg",
+      "/images/image-product-3.jpg",
+      "/images/image-product-4.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Summer Special Edition Sandals",
+    "details": "Light and comfortable sandals perfect for the beach or casual wear. Featuring a cushioned sole for extra comfort.",
+    "brand": "Sandal Company",
+    "price": 150,
+    "discount": 20,
+    "stock": 15,
+    "imgs": ["/images/image-product-5.jpg", "/images/image-product-6.jpg"]
+  },
+  {
+    "id": 4,
+    "title": "Winter Limited Edition Boots",
+    "details": "Sturdy and warm boots to keep your feet cozy in winter. Featuring a high-grip sole for snowy conditions.",
+    "brand": "Boot Company",
+    "price": 300,
+    "discount": 30,
+    "stock": 5,
+    "imgs": ["/images/image-product-7.jpg", "/images/image-product-8.jpg"]
+  },
+  {
+    "id": 5,
+    "title": "Spring Limited Edition Sneakers",
+    "details": "Stylish and comfortable sneakers for spring. Featuring a breathable mesh upper for warm weather.",
+    "brand": "Sneaker Company",
+    "price": 200,
+    "discount": 25,
+    "stock": 10,
+    "imgs": ["/images/image-product-9.jpg", "/images/image-product-10.jpg"]
+  },
+  {
+    "id": 6,
+    "title": "Classic Leather Loafers",
+    "details": "Elegant leather loafers perfect for formal occasions. Featuring a sleek design with a comfortable fit.",
+    "brand": "Loafer Company",
+    "price": 350,
+    "discount": 15,
+    "stock": 12,
+    "imgs": ["/images/image-product-11.jpg", "/images/image-product-12.jpg"]
+  },
+  {
+    "id": 7,
+    "title": "Casual Slip-On Shoes",
+    "details": "Easy to wear slip-on shoes for casual outings. Featuring a lightweight design with a cushioned insole.",
+    "brand": "Slip-On Company",
+    "price": 100,
+    "discount": 10,
+    "stock": 20,
+    "imgs": ["/images/image-product-13.jpg", "/images/image-product-14.jpg"]
+  },
+  {
+    "id": 8,
+    "title": "Sports Running Shoes",
+    "details": "High-performance running shoes for athletes. Featuring a supportive sole and breathable upper.",
+    "brand": "Sports Company",
+    "price": 250,
+    "discount": 20,
+    "stock": 30,
+    "imgs": ["/images/image-product-15.jpg", "/images/image-product-16.jpg"]
+  },
+  {
+    "id": 9,
+    "title": "Formal Oxford Shoes",
+    "details": "Classic Oxford shoes for formal events. Featuring a polished leather upper and a comfortable fit.",
+    "brand": "Oxford Company",
+    "price": 400,
+    "discount": 10,
+    "stock": 7,
+    "imgs": ["/images/image-product-17.jpg", "/images/image-product-18.jpg"]
+  },
+  {
+    "id": 10,
+    "title": "Beach Flip Flops",
+    "details": "Comfortable flip flops for the beach. Featuring a soft sole and a stylish design.",
+    "brand": "Flip Flop Company",
+    "price": 50,
+    "discount": 5,
+    "stock": 25,
+    "imgs": ["/images/image-product-19.jpg", "/images/image-product-20.jpg"]
+  },
+  {
+    "id": 11,
+    "title": "Hiking Boots",
+    "details": "Durable hiking boots for outdoor adventures. Featuring a high-grip sole and waterproof design.",
+    "brand": "Hiking Company",
+    "price": 300,
+    "discount": 20,
+    "stock": 8,
+    "imgs": ["/images/image-product-21.jpg", "/images/image-product-22.jpg"]
+  },
+  {
+    "id": 12,
+    "title": "Winter Snow Boots",
+    "details": "Warm and waterproof snow boots for winter. Featuring a high-grip sole and insulated lining.",
+    "brand": "Snow Boot Company",
+    "price": 350,
+    "discount": 25,
+    "stock": 5,
+    "imgs": ["/images/image-product-23.jpg", "/images/image-product-24.jpg"]
+  },
+  {
+    "id": 13,
+    "title": "Summer Beach Sandals",
+    "details": "Light and airy sandals perfect for the beach. Featuring a comfortable sole and adjustable straps.",
+    "brand": "Sandal Company",
+    "price": 120,
+    "discount": 10,
+    "stock": 18,
+    "imgs": ["/images/image-product-25.jpg", "/images/image-product-26.jpg"]
+  },
+  {
+    "id": 14,
+    "title": "Autumn Ankle Boots",
+    "details": "Stylish ankle boots for autumn. Featuring a durable sole and a fashionable design.",
+    "brand": "Boot Company",
+    "price": 250,
+    "discount": 20,
+    "stock": 12,
+    "imgs": ["/images/image-product-27.jpg", "/images/image-product-28.jpg"]
+  },
+  {
+    "id": 15,
+    "title": "Casual Slip-On Sneakers",
+    "details": "Easy to wear slip-on sneakers for casual wear. Featuring a lightweight design and a cushioned insole.",
+    "brand": "Sneaker Company",
+    "price": 150,
+    "discount": 10,
+    "stock": 20,
+    "imgs": ["/images/image-product-29.jpg", "/images/image-product-30.jpg"]
+  },
+  {
+    "id": 16,
+    "title": "Formal Derby Shoes",
+    "details": "Elegant Derby shoes perfect for formal occasions. Featuring a polished leather upper and a comfortable fit.",
+    "brand": "Derby Company",
+    "price": 350,
+    "discount": 15,
+    "stock": 10,
+    "imgs": ["/images/image-product-31.jpg", "/images/image-product-32.jpg"]
+  },
+  {
+    "id": 17,
+    "title": "Sports Training Shoes",
+    "details": "High-performance training shoes for athletes. Featuring a supportive sole and breathable upper.",
+    "brand": "Sports Company",
+    "price": 200,
+    "discount": 15,
+    "stock": 25,
+    "imgs": ["/images/image-product-33.jpg", "/images/image-product-34.jpg"]
+  },
+  {
+    "id": 18,
+    "title": "Elegant Evening Sandals",
+    "details": "Beautiful sandals perfect for evening wear. Featuring a stylish design and a comfortable fit.",
+    "brand": "Evening Sandal Company",
+    "price": 180,
+    "discount": 20,
+    "stock": 15,
+    "imgs": ["/images/image-product-35.jpg", "/images/image-product-36.jpg"]
+  },
+  {
+    "id": 19,
+    "title": "Spring Casual Shoes",
+    "details": "Comfortable casual shoes for spring. Featuring a lightweight design and a cushioned insole.",
+    "brand": "Casual Shoe Company",
+    "price": 160,
+    "discount": 10,
+    "stock": 18,
+    "imgs": ["/images/image-product-37.jpg", "/images/image-product-38.jpg"]
+  },
+  {
+    "id": 20,
+    "title": "Luxury Leather Boots",
+    "details": "High-end leather boots for formal occasions. Featuring a sleek design and a comfortable fit.",
+    "brand": "Luxury Boot Company",
+    "price": 500,
+    "discount": 25,
+    "stock": 6,
+    "imgs": ["/images/image-product-39.jpg", "/images/image-product-40.jpg"]
   }
 ]

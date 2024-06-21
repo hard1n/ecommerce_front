@@ -3,13 +3,18 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-/** Cart Context **/
+/** CART CONTEXT **/
 import { CartContext } from "../context/CartContext";
 import { ProductCounter } from "./ProductDetail";
+
+/** PRODUCT CONTEXT **/
+import { CurrentProductContext } from "../context/CurrentProduct";
 
 const Cart = () => {
   const { cart, removeFromCart, productCount, setProductCount } =
     useContext(CartContext);
+
+  const { handleProductClick } = useContext(CurrentProductContext);
   // const [productCount, setProductCount] = useState(0);
 
   // cart.map((item) => console.log("Detalle: ", item.product.brand));
@@ -17,22 +22,24 @@ const Cart = () => {
   return (
     <>
       <Header />
-      <main className="p-6 md:flex w-full md:py-14 md:px-20">
+      <main className="p-6 md:flex w-full md:py-14 md:px-20 text-dark-grayish-blue">
         {cart.length === 0 ? (
           <>
-            <h2>Your cart is empty</h2>
+            <div className="flex items-center justify-center rounded-xl w-full h-[50vh] bg-light-grayish-blue">
+              <h2 className="text-3xl">Your cart is empty</h2>
+            </div>
           </>
         ) : (
           <>
             {/*** Cart section ***/}
-            <section className="md:w-2/3">
+            <section className="md:w-2/3 rounded-lg md:p-4 border-1 border-dark-grayish-blue">
               <h1 className="text-3xl mb-4 text-dark-grayish-blue">
                 Your cart
               </h1>
               {cart.map((item) => (
                 <article
                   key={item.product.id}
-                  className="flex h-40 w-auto rounded-md md:m-6"
+                  className="flex h-40 w-auto m-6 bg-light-gray border border-dark-grayish-blue rounded-lg"
                 >
                   <figure className="w-2/5 md:w-1/4 rounded-lg overflow-hidden">
                     <img
@@ -41,8 +48,13 @@ const Cart = () => {
                       className="w-auto object-contain"
                     />
                   </figure>
-                  <div className="relative ml-4">
-                    <Link to={"/product-details"}>
+
+                  <div className="relative ml-4 p-4">
+                    {/** Article Title **/}
+                    <Link
+                      to={"/product-details"}
+                      onClick={() => handleProductClick(item.product)}
+                    >
                       <h2 className="text-xl md:text-3xl text-dark-grayish-blue">
                         {item.product.brand}
                       </h2>
@@ -80,8 +92,8 @@ const Cart = () => {
 
               {/*** Subtotal section ***/}
             </section>
-            <section>
-              <h2>Subtotal</h2>
+            <section className="p-4">
+              <h2 className="text-3xl">Subtotal</h2>
             </section>
           </>
         )}

@@ -9,12 +9,8 @@ import { CurrentProductContext } from "../context/CurrentProduct";
 import { CartContext } from "../context/CartContext";
 
 const ProductCard = ({ product }) => {
-  const { setSelectedProduct } = useContext(CurrentProductContext);
+  const { handleProductClick } = useContext(CurrentProductContext);
   const { cart, addToCart } = useContext(CartContext);
-
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-  };
 
   const handleButtonClick = (e) => {
     e.preventDefault();
@@ -73,8 +69,8 @@ const ProductCard = ({ product }) => {
   );
 };
 
-// ProductCard.propTypes = {
-//   productData: PropTypes.array.isRequired,
-// };
+ProductCard.propTypes = {
+  product: PropTypes.object.isRequired,
+};
 
 export default ProductCard;

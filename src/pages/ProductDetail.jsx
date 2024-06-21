@@ -1,27 +1,79 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Header from "../components/Header";
 import Carousel from "../components/Carousel";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { PiShoppingCart } from "react-icons/pi";
-
-import products from "../data/products.json";
-import product1 from "../data/image-product-1.jpg";
+import { TbShoppingCart } from "react-icons/tb";
 
 import productData from "../data/products.json";
-// Glob import all images from the assets directory
-// const images = import.meta.glob("/src/data/*");
+
+/** CART CONTEXT **/
+import { CartContext } from "../context/CartContext";
+
+/** PRODUCT CONTEXT **/
+import { CurrentProductContext } from "../context/CurrentProduct";
+
+export const ProductCounter = () => {
+  // const [productCount, setProductCount] = useState(amt);
+  const { selectedProduct: currProduct } = useContext(CurrentProductContext);
+
+  console.log("Selected: ", currProduct);
+
+  const { cart, setCart, productCount, setProductCount } =
+    useContext(CartContext);
+  console.log(cart);
+  cart.map((item) => console.log("ID:", item.product.id));
+  // let currProduct = productData[0];
+
+  return (
+    <div
+      className={`flex justify-between w-full sm:w-1/3 rounded-lg bg-light-gray relative border ${
+        productCount === currProduct.stock && "border-orange"
+      }`}
+    >
+      <button
+        onClick={() =>
+          setProductCount(productCount === 1 ? 1 : productCount - 1)
+        }
+        className=" px-4 text-orange"
+      >
+        <FaMinus />
+      </button>
+      <span
+        className={`ext-base font-bold py-4 ${
+          productCount === currProduct.stock && "text-orange"
+        }`}
+      >
+        {productCount}
+      </span>
+      <button
+        onClick={() =>
+          setProductCount(
+            productCount < currProduct.stock ? productCount + 1 : productCount
+          )
+        }
+        className="px-4 text-orange"
+      >
+        <FaPlus />
+      </button>
+    </div>
+  );
+};
 
 const ProductDetail = () => {
-  const [productCount, setProductCount] = useState(1);
+  const { cart, addToCart } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(1);
+  const { selectedProduct: currProduct } = useContext(CurrentProductContext);
 
-  // console.log(productData[0]); // Current product
-  let currProduct = productData[0];
+  console.log(currProduct); // Current product
+  console.log(cart);
+  // let currProduct = productData[0];
   return (
     <>
       <Header />
       <main className="h-screen md:h-auto md:flex md:py-14 md:px-40">
         <Carousel>
-          {products[0].imgs.map((imgPath, index) => (
+          {currProduct.imgs.map((imgPath, index) => (
             <img
               key={index}
               id={index}
@@ -56,62 +108,54 @@ const ProductDetail = () => {
             <div className="flex md:grid my-4 items-center justify-between sm:justify-normal">
               {parseInt(currProduct.discount) === 0 ? (
                 <p className="flex items-center text-3xl font-bold text-dark-blue">
-                  {`$ ${currProduct.price}.00`}
+                  {`$ ${parseFloat(currProduct.price).toFixed(2)}`}
                 </p>
               ) : (
                 <>
+                  {/* Apply discount */}
                   <p className="flex items-center text-3xl font-bold text-dark-blue">
                     {`$ ${(
-                      currProduct.price *
-                      (1 - currProduct.discount / 100)
+                      parseFloat(currProduct.price) *
+                      (1 - parseFloat(currProduct.discount) / 100)
                     ).toFixed(2)}`}
                     <span className="rounded-md h-6 px-2 mx-4 text-base bg-dark-blue text-white font-bold">
-                      {`${currProduct.discount}%`}
+                      {`${parseFloat(currProduct.discount)}%`}
                     </span>
                   </p>
 
-                  <p className="line-through font-bold text-dark-grayish-blue md:my-4">{`$ ${currProduct.price}.00`}</p>
+                  <p className="line-through font-bold text-dark-grayish-blue md:my-4">{`$ ${parseFloat(
+                    currProduct.price
+                  ).toFixed(2)}`}</p>
                 </>
               )}
             </div>
 
             {/*** Product amount & add to cart ***/}
             <section className="sm:flex justify-between">
-              <div
-                className={`flex justify-between w-full sm:w-1/3 rounded-lg bg-light-gray relative border ${
-                  productCount === currProduct.stock && "border-orange"
-                }`}
+              <ProductCounter
+                // amt={1}
+                // productCount={productCount}
+                // setProductCount={setProductCount}
+                qty={quantity}
+              />
+              {/*** Add to cart btn ***/}
+              <button
+                className="flex sm:grow sm:ml-4 justify-center items-center w-full sm:w-1/3 p-4 mt-4 sm:mt-0 rounded-lg text-dark-blue font-bold bg-orange"
+                onClick={() =>
+                  addToCart(
+                    // {
+                    // id: currProduct.id,
+                    // img: currProduct.imgs[0],
+                    // name: currProduct.title,
+                    // price: currProduct.price,
+                    // discount: currProduct.discount,
+                    // amt: productCount,
+                    // }
+                    currProduct
+                  )
+                }
               >
-                <button
-                  onClick={() =>
-                    setProductCount(productCount === 1 ? 1 : productCount - 1)
-                  }
-                  className=" px-4 text-orange"
-                >
-                  <FaMinus />
-                </button>
-                <span
-                  className={`ext-base font-bold py-4 ${
-                    productCount === currProduct.stock && "text-orange"
-                  }`}
-                >
-                  {productCount}
-                </span>
-                <button
-                  onClick={() =>
-                    setProductCount(
-                      productCount < currProduct.stock
-                        ? productCount + 1
-                        : productCount
-                    )
-                  }
-                  className="px-4 text-orange"
-                >
-                  <FaPlus />
-                </button>
-              </div>
-              <button className="flex sm:grow sm:ml-4 justify-center items-center w-full sm:w-1/3 p-4 mt-4 sm:mt-0 rounded-lg text-dark-blue font-bold bg-orange">
-                <PiShoppingCart />
+                <TbShoppingCart />
                 <span className="ml-2">Add to cart</span>
               </button>
             </section>
