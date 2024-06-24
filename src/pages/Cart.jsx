@@ -2,15 +2,16 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { ProductCounter } from "./ProductDetail";
 
 /** CART CONTEXT **/
 import { CartContext } from "../context/CartContext";
-import { ProductCounter } from "./ProductDetail";
 
 /** PRODUCT CONTEXT **/
 import { CurrentProductContext } from "../context/CurrentProduct";
 
 const Cart = () => {
+  const [counter, setCounter] = useState(1);
   const { cart, removeFromCart, productCount, setProductCount } =
     useContext(CartContext);
 
@@ -39,24 +40,24 @@ const Cart = () => {
               {cart.map((item) => (
                 <article
                   key={item.product.id}
-                  className="flex h-40 w-auto m-6 bg-light-gray border border-dark-grayish-blue rounded-lg"
+                  className="flex h-40 w-auto mx- my-4 md:m-6 bg-light-gray border border-dark-grayish-blue rounded-lg"
                 >
-                  <figure className="w-2/5 md:w-1/4 rounded-lg overflow-hidden">
+                  <figure className="flex w-4/5 md:w-1/4 rounded-lg overflow-hidden">
                     <img
                       src={item.product.imgs[0]}
                       alt=""
-                      className="w-auto object-contain"
+                      className="w-auto object-cover"
                     />
                   </figure>
 
-                  <div className="relative ml-4 p-4">
+                  <div className="flex flex-col justify-between relative md:ml-4 p-4">
                     {/** Article Title **/}
                     <Link
                       to={"/product-details"}
                       onClick={() => handleProductClick(item.product)}
                     >
                       <h2 className="text-xl md:text-3xl text-dark-grayish-blue">
-                        {item.product.brand}
+                        {item.product.title}
                       </h2>
                     </Link>
 
@@ -76,7 +77,7 @@ const Cart = () => {
                       </>
                     )}
 
-                    <div className="flex justify-between items-center md:absolute inset-x-0 bottom-0">
+                    <div className="flex justify-between items-center inset-x-0 bottom-0">
                       {/* <ProductCounter /> */}
 
                       <button
@@ -92,7 +93,7 @@ const Cart = () => {
 
               {/*** Subtotal section ***/}
             </section>
-            <section className="p-4">
+            <section className="grow p-4">
               <h2 className="text-3xl">Subtotal</h2>
             </section>
           </>
