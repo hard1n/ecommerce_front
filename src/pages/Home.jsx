@@ -20,7 +20,7 @@ const Home = () => {
       <Header />
       <main className="h-screen">
         <HeroSection />
-        <section className="p-4 md:columns-3">
+        <section className="p-4 columns-2 md:columns-3 lg:columns-4">
           {productsData.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
