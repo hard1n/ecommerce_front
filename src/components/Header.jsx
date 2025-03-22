@@ -13,7 +13,7 @@ const Header = () => {
   const { cart } = useContext(CartContext);
 
   return (
-    <div className=" px-6 md:px-14">
+    <header className="px-6 md:px-14 top-0 sticky z-50 bg-white">
       <div className="flex justify-between items-center h-20 border-b-1 border-grayish-blue">
         <Navbar />
 
@@ -37,7 +37,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
