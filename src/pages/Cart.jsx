@@ -12,11 +12,22 @@ import { CartContext } from "../context/CartContext";
 import { CurrentProductContext } from "../context/CurrentProduct";
 
 const Cart = () => {
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
 
   // const [productCount, setProductCount] = useState(0);
 
   // cart.map((item) => console.log("Detalle: ", item.product.brand));
+  // Calculate total items in cart
+  const totalItems = cart.reduce((total, item) => total + item.qty, 0);
+
+  // Calculate subtotal
+  const subtotal = cart.reduce((total, item) => {
+    const itemPrice = parseFloat(item.product.price);
+    const discount = parseFloat(item.product.discount);
+    const finalPrice =
+      discount > 0 ? itemPrice * (1 - discount / 100) : itemPrice;
+    return total + finalPrice * item.qty;
+  }, 0);
 
   return (
     <>
@@ -32,7 +43,10 @@ const Cart = () => {
           <>
             {/* Mobile: Subtotal on top (visible only on mobile) */}
             <section className="mb-6 pb-4 md:hidden border-b-1 border-grayish-blue">
-              <h2 className="text-3xl">Subtotal</h2>
+              <h2 className="text-3xl">
+                Subtotal <span>({totalItems} Items)</span>:{" "}
+                <span>${subtotal.toFixed(2)}</span>
+              </h2>
               {/* Checkout btn*/}
               <button
                 className="flex grow justify-center items-center w-full sm:w-1/3 p-4 mt-4 sm:mt-0 rounded-lg text-dark-blue font-bold  bg-orange"
@@ -58,7 +72,11 @@ const Cart = () => {
 
               {/* Desktop: Subtotal section (visible only on desktop) */}
               <section className="hidden md:block md:w-2/5 p-4">
-                <h2 className="text-3xl mb-4">Subtotal</h2>
+                <h2 className="text-3xl mb-4">
+                  Subtotal <span>({totalItems} Items)</span>:{" "}
+                  <span>${subtotal.toFixed(2)}</span>
+                </h2>
+                <p className="text-2xl mb-4"></p>
                 {/* subtotal content here */}
                 {/* Checkout btn*/}
                 <button

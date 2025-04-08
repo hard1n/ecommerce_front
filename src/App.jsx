@@ -9,8 +9,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <h1 className="text-3xl font-bold underline">Ecommerce</h1>
-        <div className="flex relative dark:bg-main-dark-bg"></div> */}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/product-details" element={<ProductDetail />} />

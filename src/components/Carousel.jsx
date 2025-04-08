@@ -48,26 +48,24 @@ const Carousel = ({ children: slides }) => {
           </div>
 
           {/*** Render next & prev buttons on desktop ***/}
-          {windowWidth >= 768 && (
-            <div>
-              <button
-                className="absolute p-2 inset-y-0 align-middle"
-                onClick={prevSlide}
-              >
-                <div className="rounded-full p-2 bg-orange-pale">
-                  <FaChevronLeft size={20} />
-                </div>
-              </button>
-              <button
-                className="absolute p-2 inset-y-0 align-middle right-0"
-                onClick={nextSlide}
-              >
-                <div className="rounded-full p-2 bg-orange-pale">
-                  <FaChevronRight size={20} />
-                </div>
-              </button>
-            </div>
-          )}
+          <div>
+            <button
+              className="absolute p-2 inset-y-0 align-middle"
+              onClick={prevSlide}
+            >
+              <div className="rounded-full p-2 bg-orange-pale">
+                <FaChevronLeft size={20} />
+              </div>
+            </button>
+            <button
+              className="absolute p-2 inset-y-0 align-middle right-0"
+              onClick={nextSlide}
+            >
+              <div className="rounded-full p-2 bg-orange-pale">
+                <FaChevronRight size={20} />
+              </div>
+            </button>
+          </div>
         </figure>
 
         {/**** Slide tracker ****/}

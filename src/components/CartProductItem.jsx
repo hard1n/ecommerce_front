@@ -36,7 +36,7 @@ const CartProductItem = ({ item }) => {
   };
 
   return (
-    <article className="flex h-40 lg:h-64 w-full md:max-w-2/3 mb-4 md:my-6 bg-light-gray border border-dark-grayish-blue rounded-lg">
+    <article className="flex h-40 lg:h-64 w-full md:max-w-2/3 mb-4 md:my-6 bg-light-gray border border-grayish-blue rounded-lg">
       <figure className="flex w-1/2 md:min-w-1/4 md:max-w-1/4 rounded-lg overflow-hidden">
         <img
           src={item.product.imgs[0]}
